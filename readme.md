@@ -111,5 +111,13 @@ Il grafico della varianza spiegata cumulativa mostra quanta parte della varianza
 ## **Come eseguire il progetto**
 1. Clona il repository:
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/Sere-eng/machine-learning.git
+   cd machine-learning
+
+2. Esegui lo script di preprocessing:
+   ```bash
+   python prepare_dataset.py
+
+3. Esegui l'analisi PCA:
+    ```bash
+   python pca_analysis.py
