@@ -5,16 +5,22 @@ Questo progetto applica l'Analisi delle Componenti Principali (PCA) su un datase
 ---
 
 ## **Dataset**
-Il dataset utilizzato è il **PACS dataset**, scaricato da Hugging Face. È stato preprocessato per selezionare le 4 classi più bilanciate e salvato in un formato compatibile con Hugging Face. Ogni immagine è stata appiattita in un vettore di dimensione `256x256x3 = 196608`, dove:
-- Le righe rappresentano i campioni (immagini).
-- Le colonne rappresentano le feature (pixel).
+Il dataset utilizzato è il **PACS dataset**, scaricato da Hugging Face. È stato preprocessato per selezionare le 4 classi più bilanciate e salvato in un formato compatibile con Hugging Face.
+
+Ogni immagine ha una dimensione originale di `227x227x3` (larghezza, altezza, canali RGB). Durante il preprocessing, tutte le immagini sono state appiattite in vettori monodimensionali di lunghezza `227x227x3 = 154587`. 
+
+Questi vettori sono stati combinati per formare una matrice `X`, dove:
+- **Le righe** rappresentano i campioni (una riga per ogni immagine).
+- **Le colonne** rappresentano le feature (i pixel RGB appiattiti di ogni immagine).
+
+Questa matrice `X` è stata utilizzata come input per l'analisi PCA.
 
 ---
 
 ## **Obiettivi**
-1. **Riduzione della dimensionalità**: Applicare PCA per ridurre la dimensionalità delle immagini.
-2. **Visualizzazione delle componenti principali**: Analizzare le prime componenti principali e la loro capacità di rappresentare i dati.
-3. **Spiegabilità**: Valutare la varianza spiegata cumulativa per determinare il numero ottimale di componenti principali.
+1. **Riduzione della dimensionalità**: applicare PCA per ridurre la dimensionalità delle immagini.
+2. **Visualizzazione delle componenti principali**: analizzare le prime componenti principali e la loro capacità di rappresentare i dati.
+3. **Spiegabilità**: valutare la varianza spiegata cumulativa per determinare il numero ottimale di componenti principali.
 
 ---
 
@@ -32,8 +38,8 @@ Il dataset utilizzato è il **PACS dataset**, scaricato da Hugging Face. È stat
   - Le ultime 6 componenti principali.
 
 ### **3. Visualizzazioni**
-- **Scatter plot**: Visualizzazione delle proiezioni delle immagini sulle componenti principali.
-- **Varianza spiegata cumulativa**: Analisi della quantità di varianza spiegata da un numero crescente di componenti principali.
+- **Scatter plot**: visualizzazione delle proiezioni delle immagini sulle componenti principali.
+- **Varianza spiegata cumulativa**: analisi della quantità di varianza spiegata da un numero crescente di componenti principali.
 
 ---
 

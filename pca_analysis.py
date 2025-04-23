@@ -4,7 +4,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 from datasets import load_from_disk
 from config import DATASET_PATH, PCA_COMPONENTS, OUTPUT_DIR
-from pca_utils import apply_pca, save_image, load_images_and_labels
+from pca_utils import apply_pca, save_image, load_images_and_labels, reconstruct_image
 import numpy as np
 
 
@@ -30,7 +30,7 @@ def main():
         X_pca, pca = apply_pca(X, n)
 
         # Ricostruzione dallo spazio PCA
-        X_reconstructed = pca.inverse_transform(X_pca)
+        X_reconstructed = reconstruct_image(pca, X_pca)
         x_reconstructed = scaler.inverse_transform(X_reconstructed[0].reshape(1, -1)).flatten()  # Inverto anche la standardizzazione, per riportarla nel dominio originale
 
         # Salva immagine ricostruita
