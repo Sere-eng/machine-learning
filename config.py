@@ -9,8 +9,5 @@ OUTPUT_DIR = "pca_outputs"
 # Numero di componenti principali da testare
 PCA_COMPONENTS = [60, 6, 2, -6]  # -6 = ultime 6 componenti
 
-# Random seed (per riproducibilità)
-SEED = 42
-
 # Numero di classi da usare (es: 4 per PACS)
 NUM_CLASSES = 4
