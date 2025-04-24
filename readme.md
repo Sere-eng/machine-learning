@@ -96,7 +96,7 @@ Gli scatter plot mostrano la proiezione delle immagini sulle componenti principa
 ### **Fondamento teorico**
 Il classificatore Naive Bayes è un modello probabilistico basato sul **Teorema di Bayes**. La formulazione utilizzata è la seguente:
 
-$$\hat{y} = \underset{y \in \{1, \dots, k\}}{\operatorname{argmax}} \, p(y \mid x_1, \dots, x_d)$$
+![formula](https://latex.codecogs.com/svg.image?\hat{y}&space;=&space;\underset{y&space;\in&space;\{1,&space;\dots,&space;k\}}{\operatorname{argmax}}&space;p(y&space;\mid&space;x_1,&space;\dots,&space;x_d))
 
 Dove:
 - $\hat{y}$ è l'etichetta predetta.
